@@ -1,0 +1,36 @@
+Feb 27 12:24:49  [info] Creating canary table
+
+Feb 27 23:25:37  [info] $Fatal Error Details = Array
+(
+    [message] => One of parameters  (value: ) is not of the type Integer
+    [code] => 
+)
+
+
+Feb 27 23:25:37  [info] $backTrace = #0 /usr/share/nginx/html/sites/all/modules/civicrm/CRM/Core/Error.php(373): CRM_Core_Error::backtrace("backTrace", TRUE)
+#1 /usr/share/nginx/html/sites/all/modules/civicrm/CRM/Utils/Type.php(428): CRM_Core_Error::fatal("One of parameters  (value: ) is not of the type Integer")
+#2 /usr/share/nginx/html/sites/all/modules/civicrm/CRM/Core/DAO.php(1374): CRM_Utils_Type::validate("", "Integer")
+#3 /usr/share/nginx/html/sites/all/modules/civicrm/CRM/Core/DAO.php(1291): CRM_Core_DAO::composeQuery("\nSELECT GROUP_CONCAT(contact_id) as contactStr\nFROM   civicrm_group_contact...", (Array:2), TRUE)
+#4 /usr/share/nginx/html/sites/all/modules/civicrm/CRM/Contact/BAO/GroupContact.php(761): CRM_Core_DAO::executeQuery("\nSELECT GROUP_CONCAT(contact_id) as contactStr\nFROM   civicrm_group_contact...", (Array:2))
+#5 /usr/share/nginx/html/sites/all/modules/civicrm/CRM/Contact/BAO/GroupContact.php(141): CRM_Contact_BAO_GroupContact::bulkAddContactsToGroup((Array:1), "", "Web", "Added", NULL)
+#6 /usr/share/nginx/html/sites/all/modules/civicrm/CRM/Contact/Form/GroupContact.php(143): CRM_Contact_BAO_GroupContact::addContactsToGroup((Array:1), "", "Web")
+#7 /usr/share/nginx/html/sites/all/modules/civicrm/CRM/Core/Form.php(451): CRM_Contact_Form_GroupContact->postProcess()
+#8 /usr/share/nginx/html/sites/all/modules/civicrm/CRM/Core/StateMachine.php(160): CRM_Core_Form->mainProcess()
+#9 /usr/share/nginx/html/sites/all/modules/civicrm/CRM/Core/QuickForm/Action/Next.php(61): CRM_Core_StateMachine->perform(Object(CRM_Contact_Form_GroupContact), "next", "Next")
+#10 /usr/share/nginx/html/sites/all/modules/civicrm/packages/HTML/QuickForm/Controller.php(203): CRM_Core_QuickForm_Action_Next->perform(Object(CRM_Contact_Form_GroupContact), "next")
+#11 /usr/share/nginx/html/sites/all/modules/civicrm/packages/HTML/QuickForm/Page.php(103): HTML_QuickForm_Controller->handle(Object(CRM_Contact_Form_GroupContact), "next")
+#12 /usr/share/nginx/html/sites/all/modules/civicrm/CRM/Core/Controller.php(351): HTML_QuickForm_Page->handle("next")
+#13 /usr/share/nginx/html/sites/all/modules/civicrm/CRM/Contact/Page/View/UserDashBoard/GroupContact.php(122): CRM_Core_Controller->run()
+#14 /usr/share/nginx/html/sites/all/modules/civicrm/CRM/Contact/Page/View/UserDashBoard/GroupContact.php(131): CRM_Contact_Page_View_UserDashBoard_GroupContact->edit()
+#15 /usr/share/nginx/html/sites/all/modules/civicrm/CRM/Contact/Page/View/UserDashBoard.php(187): CRM_Contact_Page_View_UserDashBoard_GroupContact->run()
+#16 /usr/share/nginx/html/sites/all/modules/civicrm/CRM/Contact/Page/View/UserDashBoard.php(199): CRM_Contact_Page_View_UserDashBoard->buildUserDashBoard()
+#17 /usr/share/nginx/html/sites/all/modules/civicrm/CRM/Core/Invoke.php(310): CRM_Contact_Page_View_UserDashBoard->run((Array:2), NULL)
+#18 /usr/share/nginx/html/sites/all/modules/civicrm/CRM/Core/Invoke.php(84): CRM_Core_Invoke::runItem((Array:14))
+#19 /usr/share/nginx/html/sites/all/modules/civicrm/CRM/Core/Invoke.php(52): CRM_Core_Invoke::_invoke((Array:2))
+#20 /usr/share/nginx/html/sites/all/modules/civicrm/drupal/civicrm.module(448): CRM_Core_Invoke::invoke((Array:2))
+#21 [internal function](): civicrm_invoke("user")
+#22 /usr/share/nginx/html/includes/menu.inc(527): call_user_func_array("civicrm_invoke", (Array:1))
+#23 /usr/share/nginx/html/index.php(21): menu_execute_active_handler()
+#24 {main}
+
+
